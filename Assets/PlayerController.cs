@@ -7,28 +7,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool b = true;
     void FixedUpdate()
     {
-        //player.AddForce(horisontalForce * Time.deltaTime);
-        if (Input.GetKey("d"))
-        {
-            player.AddForce(horisontalForce * Time.deltaTime);
-        }
-        else if (Input.GetKey("a"))
-        {
-            player.AddForce(- horisontalForce * Time.deltaTime);
-        }
-        else if (Input.GetKey("w") && b)
-        {
-            player.AddForce(- verticalForce * Time.deltaTime, ForceMode2D.Impulse);
-        }
+        moveHorizontal (Input.GetAxisRaw("Horizontal"));
+        moveVertical (Input.GetAxisRaw("Vertical"));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground") b = true;
-        //if (collision.tag == "Enemy") anim.SetBool("Death", true);
-        //anim.SetBool("Death", false);
+        if (collision.gameObject.tag == "Ground") b = true;
+        if (collision.gameObject.tag == "Enemy") anim.SetBool("Death", true);
+        anim.SetBool("Death", false);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground") b = false;
+        if (collision.gameObject.tag == "Ground") b = false;
+    }
+    public void moveHorizontal(float value)
+    {
+        player.AddForce(value * horisontalForce * Time.deltaTime);
+    }
+    public void moveVertical(float value)
+    {
+        player.AddForce(value * verticalForce * Time.deltaTime);
     }
 }

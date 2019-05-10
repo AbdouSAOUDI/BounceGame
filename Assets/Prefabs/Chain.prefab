@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6424431033551803656}
   - component: {fileID: 7743593942452907901}
   - component: {fileID: 7540172959015466217}
+  - component: {fileID: 5022333642656138410}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Enemy
@@ -131,6 +132,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &5022333642656138410
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743593942452907900}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 3
 --- !u!1 &7832558568184929657
 GameObject:
   m_ObjectHideFlags: 0
