@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BackgroundFellow : MonoBehaviour
 {
-    [SerializeField] private Vector3 v3;
+    [SerializeField] private Vector2 v2;
+    [SerializeField] private Camera cam;
     void Update()
     {
-        v3.x = GetComponent<Camera>().transform.position.x;
-        v3.y = 0f;
-        v3.z = 0f;
-        transform.position = v3;
+        v2.x = cam.transform.position.x;
+        v2.y = 0f;
+        transform.position = v2;
     }
 }

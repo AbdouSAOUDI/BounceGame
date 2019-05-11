@@ -5,6 +5,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Vector2 horisontalForce, verticalForce;
     [SerializeField] private bool b = true;
+    private void Start()
+    {
+        player = GetComponent<Rigidbody2D>();
+    }
     void FixedUpdate()
     {
         moveHorizontal (Input.GetAxisRaw("Horizontal"));
