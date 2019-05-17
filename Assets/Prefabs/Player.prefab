@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6527888079331422668}
   - component: {fileID: 6527888079331422669}
   - component: {fileID: 6527888080328507731}
+  - component: {fileID: 87601925}
   - component: {fileID: 6527888080328507732}
   m_Layer: 0
   m_Name: Player
@@ -117,8 +118,27 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &87601925
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6527888079331422667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1d74928d390bb64283ff85433a1f5a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6527888080328507732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6527888080328507731}
+  anim: {fileID: 87601925}
   horisontalForce: {x: 500, y: 0}
   verticalForce: {x: 0, y: 500}
   b: 1
