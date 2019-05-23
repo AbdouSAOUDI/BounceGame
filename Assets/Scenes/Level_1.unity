@@ -1128,7 +1128,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 0
+  m_SortOrder: 2
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -12092,6 +12092,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6527888080328507732, guid: 90f49674c457c1041ab90bd8b6598647,
+        type: 3}
+      propertyPath: verticalForce.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527888080328507732, guid: 90f49674c457c1041ab90bd8b6598647,
+        type: 3}
+      propertyPath: horisontalForce.x
+      value: 15000
+      objectReference: {fileID: 0}
     - target: {fileID: 6527888079331422671, guid: 90f49674c457c1041ab90bd8b6598647,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12151,16 +12161,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_GravityScale
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6527888080328507732, guid: 90f49674c457c1041ab90bd8b6598647,
-        type: 3}
-      propertyPath: verticalForce.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6527888080328507732, guid: 90f49674c457c1041ab90bd8b6598647,
-        type: 3}
-      propertyPath: horisontalForce.x
-      value: 15000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90f49674c457c1041ab90bd8b6598647, type: 3}

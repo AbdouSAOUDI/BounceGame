@@ -5,31 +5,48 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private float horisontalForce, speedJump;
     [SerializeField] private bool b = false;
-    public float SpeedJump = 50f;
+
+
+
+
+
+    [SerializeField] private bool isGround;
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
+    private float jumpheigt = 2f;
+    void FixedUpdate()
+    {
+        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+
+        moveHorizontal(Input.GetAxisRaw("Horizontal"));
+        //if (Input.GetKey(KeyCode.Space) && b) player.AddForce(verticalForce * Time.deltaTime);
+        //if (b)
+        //{
+        //    player.velocity = player.transform.up * speedJump;
+        //    b = false;
+        //}
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
+        {
+            player.AddForce(transform.up * jumpheigt, ForceMode2D.Impulse);
+        }
+
+    }
     private void Start()
     {
         player = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
     }
-    void FixedUpdate()
-    {
-        moveHorizontal (Input.GetAxisRaw("Horizontal"));
-        //if (Input.GetKey(KeyCode.Space) && b) player.AddForce(verticalForce * Time.deltaTime);
-        if (b)
-        {
-            player.velocity = player.transform.up * speedJump;
-            b = false;
-        }
-    }
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
+            player.velocity = Vector2.up * speedJump * Input.GetAxis("Jump");
             if (Input.mousePosition.x > Screen.width / 2)
             {
                 //Move Player Left
 
-                player.velocity = Vector2.up * speedJump * Input.GetAxis("Jump");
+                
                 //extrajumps--;
                 //anim.SetBool("isJumping", true);
             }
