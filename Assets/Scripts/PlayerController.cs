@@ -3,6 +3,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D player;
     [SerializeField] private Animator anim;
+    [SerializeField] private Collider2D coll;
     [SerializeField] private float horisontalForce, speedJump;
     [SerializeField] private bool b = false;
 
@@ -12,11 +13,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool isGround;
     public Transform groundCheck;
-    public LayerMask whatIsGround;
+    public LayerMask whatIsGround;//collide with this layer.
     private float jumpheigt = 2f;
     void FixedUpdate()
     {
-        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+        //isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+        //Physics2D.IgnoreCollision
+
+        isGround = coll.IsTouchingLayers(whatIsGround);
 
         moveHorizontal(Input.GetAxisRaw("Horizontal"));
         //if (Input.GetKey(KeyCode.Space) && b) player.AddForce(verticalForce * Time.deltaTime);
@@ -35,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
     }
     private void Update()
     {
